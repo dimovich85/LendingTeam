@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="favicon.png">
-	<title> Document </title>
+	<title> Главная </title>
 	<link rel="stylesheet" href="./css/styles.css">
 
 	<!-- HTML5 shim and Respond.js-->
@@ -19,16 +19,74 @@
 </head>
 <body>
 
-<h1>Начал новый проект!</h1>
-<h2>Второй день работы</h2>
-<h2>Пишу код третий день</h2>
-<script>
-	console.log('Hello! Oh');
-	var a = 'hey';
-</script>
+{% set title = 'Главная' %}
+{% set link = 'another_page.html' %}
 
-<h4>Ура, почти закончил проект!</h4>
-<p>Lorem ipsum dolor sit amet.</p>
+{% set users = ['Eldar', 'Dima', 'Lilya', 'Petya', 'Vasy', 'Katya', 'Dasha', 'Yulia'] %}
+
+{% set usersData = [
+		{
+			name: 'Eldar',
+			id: 123,
+			src: '/img/eldar.jpg'
+		},
+		{
+			name: 'Dima',
+			id: 254,
+			src: '/img/dima.jpg'
+		},
+		{
+			name: 'Petya',
+			id: 254,
+			src: '/img/dima.jpg'
+		}
+	] %}
+
+{% include '_header.html' %}
+
+<ul>
+	{% for info in usersData %}
+	<li>
+		<h3>{{ info.name }}</h3>
+		<p>{{ info.id }}</p>
+		<img src="{{ info.src }}" alt="{{ info.name }}">
+	</li>
+	{% endfor %}
+</ul>
+
+<ul>
+	{% for user in users %}
+	<li>User: {{ user }}</li>
+	{% endfor %}
+</ul>
+ 
+<div class="block mod">
+	<h2>Hello world!</h2>
+	<div class="block-item">
+		<span id="item">I'm item!
+			<span class="selec"> hey</span>
+		</span>
+	</div>
+</div>
+
+<div class="filter">
+	<form action="#" class="filter__form">
+		<input type="text" class="filter__input">
+		<button class="filter__btn">Отправить</button>
+		<button class="filter__btn filter__btn_cancel">Отменить</button>
+	</form>
+</div>
+
+<div class="container">
+	<div class="colored-block">MODAL</div>
+</div>
+
+<div class="container">
+	<div class="colored-block2">MODAL</div>
+</div>
+
+
+{% include '_footer.html' %}
 
 <script src="./js/js.js"></script>
 </body>

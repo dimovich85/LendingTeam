@@ -1,3 +1,20 @@
+.center(@w, @h){
+	width: @w;
+	height: @h;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -( @h / 2 );
+	margin-left: -( @w / 2 );
+}
+
+.mixin(){
+	font-size: 60px;
+}
+
+
+
+
 .media(@brk_point; @block){
 	@media screen and (max-width: @brk_point){
 		@block();

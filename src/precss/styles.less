@@ -1,3 +1,126 @@
 @import 'libs/smart-grid.less';
 @import 'libs/vars.less';
 @import 'libs/mixins.less';
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+@some: 50px;
+
+.block{
+	background-color: @color_text;
+	color: green;
+
+	.block-item{
+		font-size: @some;
+
+		#item{
+			@some: 20px;
+			color: crimson;
+			font-size: @some;
+			.selec{
+				font-size: @sizes[lg];
+			}
+		}
+	}
+}
+
+.selec{
+	font-size: 20px !important;
+}
+
+.selec{
+	font-size: 35px !important;
+}
+
+
+
+.block{
+	color: @colors[text];
+	background-color: @colors[background];
+
+	&:before{
+		content: 'Im PSEUDO before!';
+	}
+
+	&.mod{
+		background-color: @colors[some];
+	}
+
+}
+
+.filter{
+	padding: @sizes[md];
+	
+	&__input{
+		border: 2px solid red;
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	&__btn{
+		background-color: cyan;
+		padding: 5px 10px;
+		border-radius: 20px;
+
+		&:hover{
+			background-color: darken(cyan, 30%);
+		}
+
+		&_cancel{
+			background-color: @colors[text];
+			color: #fff;
+			&:hover{
+				background-color: lighten(@colors[text], 20%);
+			}
+		}
+
+
+	}
+
+}
+
+.container{
+	margin: 20px 0;
+	height: 800px;
+	background-color: #999;
+	position: relative;
+	.colored-block{
+		@width: 273px;
+		@height: 155px;
+		width: @width;
+		height: @height;
+		background-color: cyan;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -( @height / 2 );
+		margin-left: -( @width / 2 );
+		
+	}
+
+	.colored-block2{
+		background-color: red;
+		width: 500px;
+		height: 220px;
+		.center(500px, 220px);
+		.mixin();
+	}
+}
+
+/*
+
+lighten(color1, %); - делает цвет светлее на %
+darken(color, %); - делает темнее
+sqrt(int) - находит корень квадратный из числа
+abs(int) - возвращает модуль числа
+sin(deg)
+cos(deg)
+pi() - возвращает число 3.14....
+pow(int, pow) - возносит int в степень pow, pow(3, 2) - 3*3 = 9
+
+
+*/
