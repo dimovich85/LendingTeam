@@ -19,74 +19,7 @@
 </head>
 <body>
 
-{% set title = 'Главная' %}
-{% set link = 'another_page.html' %}
 
-{% set users = ['Eldar', 'Dima', 'Lilya', 'Petya', 'Vasy', 'Katya', 'Dasha', 'Yulia'] %}
-
-{% set usersData = [
-		{
-			name: 'Eldar',
-			id: 123,
-			src: '/img/eldar.jpg'
-		},
-		{
-			name: 'Dima',
-			id: 254,
-			src: '/img/dima.jpg'
-		},
-		{
-			name: 'Petya',
-			id: 254,
-			src: '/img/dima.jpg'
-		}
-	] %}
-
-{% include '_header.html' %}
-
-<ul>
-	{% for info in usersData %}
-	<li>
-		<h3>{{ info.name }}</h3>
-		<p>{{ info.id }}</p>
-		<img src="{{ info.src }}" alt="{{ info.name }}">
-	</li>
-	{% endfor %}
-</ul>
-
-<ul>
-	{% for user in users %}
-	<li>User: {{ user }}</li>
-	{% endfor %}
-</ul>
- 
-<div class="block mod">
-	<h2>Hello world!</h2>
-	<div class="block-item">
-		<span id="item">I'm item!
-			<span class="selec"> hey</span>
-		</span>
-	</div>
-</div>
-
-<div class="filter">
-	<form action="#" class="filter__form">
-		<input type="text" class="filter__input">
-		<button class="filter__btn">Отправить</button>
-		<button class="filter__btn filter__btn_cancel">Отменить</button>
-	</form>
-</div>
-
-<div class="container">
-	<div class="colored-block">MODAL</div>
-</div>
-
-<div class="container">
-	<div class="colored-block2">MODAL</div>
-</div>
-
-
-{% include '_footer.html' %}
 
 <script src="./js/js.js"></script>
 </body>
