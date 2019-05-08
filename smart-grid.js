@@ -1,12 +1,12 @@
 const smartgrid = require('smart-grid');
 const settings = {
-	outputStyle: 'less', /* less || scss || sass || styl */
-    columns: 12, /* number of grid columns */
-    offset: '20px', /* gutter width px || % || rem */
-    mobileFirst: false,
+	outputStyle: 'sass', /* less || scss || sass || styl */
+    columns: 16, /* number of grid columns */
+    offset: '30px', /* gutter width px || % || rem */
+    mobileFirst: true,
     container: {
-        maxWidth: '1200px', /* max-width оn very large screen */
-        fields: '30px' /* side fields */
+        maxWidth: '1600px', /* max-width оn very large screen */
+        fields: '20px' /* side fields */
     },
     breakPoints: {
         lg: {
@@ -16,11 +16,14 @@ const settings = {
             width: '960px'
         },
         sm: {
-            width: '780px',
-            fields: '15px' /* set fields only if you want to change container.fields */
+            width: '768px',
+            fields: '10px' /* set fields only if you want to change container.fields */
         },
         xs: {
             width: '560px'
+        },
+        dima: {
+            width: '300px'
         }
     }
 };
