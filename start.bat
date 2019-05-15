@@ -1,3 +1,2 @@
-﻿d:
-cd "D:\Курс по верстке\Projects\LendingTeam"
+﻿dir
 gulp
