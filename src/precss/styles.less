@@ -1,6 +1,7 @@
 @import 'libs/smart-grid.less';
 @import 'libs/vars.less';
 @import 'libs/mixins.less';
+@import 'libs/animate.min.css';
 
 body{
 	margin: 0;
@@ -35,6 +36,10 @@ img{
 		width: 75%;
 		margin: 0 auto;
 	}
+}
+
+.ov-h{
+	overflow: hidden;
 }
 
 /* 
@@ -74,3 +79,87 @@ vmax - берет большее между высотой и шириной э�
 		font-size: 24px;
  	});
  }
+
+
+ .preloader{
+ 	position: fixed;
+ 	background-color: #fff;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100%;
+ 	bottom: 0;
+ }
+
+ .wrap{
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+ 	width: 300px;
+ 	height: 300px;
+ }
+
+ .cup{
+ 	position: absolute;
+ 	width: 100px;
+ 	height: 100px;
+ 	left: 50%;
+ 	bottom: 0;
+ 	left: 0;
+ }
+
+ .teapot{
+ 	position: absolute;
+ 	width: 100px;
+ 	height: 100px;
+ 	top: 0;
+ 	right: 170px;
+ 	animation: pot-rotate 5s ease-in;
+ 	&:before{
+ 		content: '';
+ 		display: block;
+ 		border-bottom: 5px dashed #2D1B01;
+ 		position: absolute;
+		top: 20px;
+		right: 95px;
+		width: 0;
+		animation: cofee-stream 2s ease-out;
+		animation-delay: 2s;
+ 	}
+ }
+
+ @keyframes pot-rotate{
+ 	0{
+ 		transform: rotate(0);
+ 	}
+	30%{
+		transform: rotate(-90deg);
+	}
+	70%{
+		transform: rotate(-90deg);
+	}
+	100%{
+		transform: rotate(0);
+	}
+}
+
+@keyframes cofee-stream{
+	0{
+		width: 0px;
+	}
+	30%{
+		width: 0;
+	}
+	35%{
+		width: 0;
+	}
+	65%{
+		width: 150px;
+	}
+	70%{
+		width: 150px;
+	}
+	100%{
+		width: 0px;
+	}
+}
