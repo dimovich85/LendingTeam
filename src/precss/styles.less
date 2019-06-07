@@ -3,36 +3,45 @@
 @import 'libs/mixins.less';
 
 
-.dropdown{
-	list-style: none;
-	&__li{
-		background-color: #ddd;
-		padding: 10px;
-	}
-	button{
-		position: relative;
-		border: none;
-		background-color: transparent;
-		width: 100px;
-		cursor: pointer;
-		padding: 10px;
-		&.opened:before{
-			transform: rotate(-45deg);
-		}
-		&:before{
-			content: '';
-			display: block;
-			position: absolute;
-			top: 50%;
-			right: 3px;
-			margin-top: -7px;
-			width: 10px;
-			height: 10px;
-			border: 1px solid transparent;
-			border-top-color: #000;
-			border-right-color: #000;
-			transform: rotate(135deg);
-			transition: transform 0.3s ease-in;
-		}
-	}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ff0000;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #ff0000;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #ff0000;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #ff0000;
+}
+
+.visually-hidden{
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	margin: -1px;
+	position: absolute;
+	clip: rect(0,0,0,0);
+	border: none;
+}
+
+.custom-input{
+	display: inline-block;
+	@size: 20px;
+	width: @size;
+	height: @size;
+	background: transparent url(../img/svg/noun_Coffee_848419.svg) no-repeat center;
+}
+
+.origin-input:checked + .custom-input{
+	background-image: url('../img/svg/noun_Teapot_134361.svg');
+}
+
+.origin-input:required + .custom-input{
+	background-color: green;
+}
+
+.origin-input:disabled + .custom-input{
+	background-color: pink;
 }

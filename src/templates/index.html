@@ -19,32 +19,81 @@
 </head>
 <body>
 
-<ul class="dropdown">
-	<li class="dropdown__li">
-		<button>Первый</button>
-		<div class="info">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque perspiciatis placeat voluptatem molestias nisi ea, vel! Magni provident ab consequuntur, cum alias laudantium dicta veniam enim at deserunt pariatur, doloribus.
-		</div>
-	</li>
-	<li class="dropdown__li">
-		<button>Второй</button>
-		<div class="info">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione omnis, sed porro, explicabo soluta asperiores distinctio molestias deserunt eum aut perferendis adipisci magnam! Optio dicta ipsam, beatae, nisi maiores asperiores?
-		</div>
-	</li>
-	<li class="dropdown__li">
-		<button>Третий</button>
-		<div class="info">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus nam reiciendis suscipit exercitationem voluptate dolorum, accusamus similique cumque quas, eligendi nulla, aliquam mollitia dolorem quis distinctio quibusdam ea tenetur modi.
-		</div>
-	</li>
-	<li class="dropdown__li">
-		<button>Четвертый</button>
-		<div class="info">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus cum, at minima, accusantium dolores quidem magnam perferendis earum sit, rem aspernatur vel. Commodi optio repellat error, libero facere odio.
-		</div>
-	</li>
-</ul>
+
+<form action="#" method="GET">
+	<p>
+		<label for="name">Имя</label>
+		<input id="name" type="text" name="my-name" value="Дмитрий" required>
+	</p>
+	<p>
+		<label for="surname">Фамилия</label>
+		<input id="surname" type="text" name="my-surname" placeholder="Иванов" required>
+	</p>
+	<p>
+		<label for="phone">Телефон</label>
+		<input id="phone" type="tel" name="my-phone" placeholder="+380 xx xxx xx xx" required pattern="[0-9]{9,20}">
+	</p>
+	<p>
+		<label for="email">Email</label>
+		<input id="email" type="email" name="my-email" placeholder="some@sample.com" required>
+	</p>
+	<fieldset>
+		<legend>Укажите Ваш пол:</legend>
+		<label for="male">Мужской</label>
+		<input class="visually-hidden origin-input" id="male" type="radio" name="sex" value="мужской" checked>
+		<span class="custom-input"></span>
+		<label for="female">Женский</label>
+		<input class="visually-hidden origin-input" id="female" type="radio" name="sex" value="женский">
+		<span class="custom-input"></span>
+	</fieldset>
+	<p>
+		<label for="city">Укажите город:</label>
+		<select name="city" id="city">
+			<option value="Киев">Киев</option>
+			<option value="Винница">Винница</option>
+			<option value="Одесса">Одесса</option>
+		</select>
+	</p>
+	<fieldset>
+		<legend>Ваши любимые занятия:</legend>
+		<ul>
+			<li>
+				<label for="check1">Просмотр фильмов</label>
+				<input class="visually-hidden origin-input" id="check1" type="checkbox" name="hoobies" value="фильмы">
+				<span class="custom-input"></span>
+			</li>
+			<li>
+				<label for="check2">Игры</label>
+				<input class="visually-hidden origin-input" id="check2" type="checkbox" name="hoobies" value="игры">
+				<span class="custom-input"></span>
+			</li>
+			<li>
+				<label for="check3">Прогулка</label>
+				<input class="visually-hidden origin-input" id="check3" type="checkbox" name="hoobies" value="прогулка">
+				<span class="custom-input"></span>
+			</li>
+			<li>
+				<label for="check4">Чтение</label>
+				<input class="visually-hidden origin-input" id="check4" type="checkbox" name="hoobies" value="чтение">
+				<span class="custom-input"></span>
+			</li>
+		</ul>
+	</fieldset>
+	<p>
+		<label><span>Расскажите о себе:</span>
+			<textarea name="about" cols="10" rows="10" disabled></textarea>
+		</label>
+	</p>
+	<p>
+		<label>Согласен с правилами
+			<input type="checkbox" name="check-rules" required>
+		</label>
+	</p>
+	<input type="hidden" name="product-id" value="57">
+	<button type="submit">Отправка формы</button>
+</form>
+
+
 
 
 <script src="../js/jquery.min.js"></script>
