@@ -3,45 +3,130 @@
 @import 'libs/mixins.less';
 
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #ff0000;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: #ff0000;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: #ff0000;
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: #ff0000;
+
+body{
+  margin: 0;
+  padding: 0;
 }
 
-.visually-hidden{
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	margin: -1px;
-	position: absolute;
-	clip: rect(0,0,0,0);
-	border: none;
+.container{
+  background-color: #ddd;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 80px 70px 1fr minmax(50px, auto);
+  /* grid-template-areas: 
+    "menu header"
+    "menu nav"
+    "menu content"
+    "footer footer"; */
+  grid-gap: 10px;
 }
 
-.custom-input{
-	display: inline-block;
-	@size: 20px;
-	width: @size;
-	height: @size;
-	background: transparent url(../img/svg/noun_Coffee_848419.svg) no-repeat center;
+.block{
+  background-color: crimson;
+  color: white;
 }
 
-.origin-input:checked + .custom-input{
-	background-image: url('../img/svg/noun_Teapot_134361.svg');
+.block1{
+  background-color: black;
+  /* grid-area: header; */
+  /*grid-column-start: 2;
+  grid-column-end: 3;*/
+  grid-column: ~'2/3';
 }
 
-.origin-input:required + .custom-input{
-	background-color: green;
+.block2{
+  background-color: blue;
+  /* grid-area: menu; */
+  /* grid-row-start: 1;
+  grid-row-end: 6; */
+  grid-row: ~'1/5';
 }
 
-.origin-input:disabled + .custom-input{
-	background-color: pink;
+.block3{
+  background-color: yellow;
+  color: #000;
+  /* grid-area: nav; */
+  grid-row: ~'2/3';
 }
+
+.block4{
+  background-color: #777;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  /* grid-area: content; */
+}
+
+.block5{
+  background-color: cyan;
+  color: #000;
+  /* grid-area: footer; */
+  /* grid-column-start: 2;
+  grid-column-end: 3; */
+  grid-area: ~'4/2/5/3';
+}
+
+
+
+
+
+
+/* canvas{
+	width: 500px;
+	height: 500px;
+} */
+
+/* .menu li{
+	float: left;
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+
+.menu{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+img.filter:hover{
+	transform: scale(1.2);
+	outline: 1px solid #ff0000;
+	transition: 0.5s;
+}
+
+@supports (filter: blur(5px)){
+	img.filter{
+		filter: blur(5px);
+		transition: 0.5s;
+		&:hover{
+			filter: blur(0);
+			transform: scale(1);
+			outline: none;
+		}
+	}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* svg{
+	width: 100px;
+	height: 100px;
+	fill: #43dd45;
+}
+
+.svg-path{
+	fill: red;
+} */
