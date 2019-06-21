@@ -6,20 +6,6 @@ body{
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
-	.block{
-		width: 50%;
-		min-height: 100px;
-		background-color: red;
-		padding: 1px;
-
-		@media screen and (max-width: 500px){
-			width: 100%;
-		}
-
-		.media(400px, {
-			background-color: cyan;
-		});
-	}
 }
 
 img{
@@ -28,49 +14,14 @@ img{
 }
 
 
-
-
-@media screen and (max-width: 750px){
-	.block{
-		width: 75%;
-		margin: 0 auto;
+.bg{
+	&-cyan{
+		background-color: cyan;
+	}
+	&-red{
+		background-color: red;
+	}
+	&-blue{
+		background-color: blue;
 	}
 }
-
-/* 
-	@media screen and (min-width: 320px) and (max-width: 740px){
-	/////
-	}
-	height: 100vh;
-	overflow-y: scroll;
- */
-
- /*
-em - пропорцилнальная еденица, считается 
-	от размера шрифта родителя
-rem - пропорционально берет размер от корневого узла
-	документа!
-vw - ширина окна браузера
-vh - высота окна браузера
-vmin - берет меньшее между высотой и шириной экрана 
-	и считает по принципу vw/vh
-vmax - берет большее между высотой и шириной экрана 
-	и считает по принципу vw/vh
- */
-
- ul{
- 	font-size: 2em;
- 	/* 2 * fon-size(родителя) */
- }
-
- .for-rem{
- 	font-size: 2rem;
- 	/* 2 * font-size(html, body, :root) */
- }
-
- .big{
- 	font-size: 7.5vw;
- 	.media(648px, {
-		font-size: 24px;
- 	});
- }

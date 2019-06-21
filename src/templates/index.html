@@ -18,37 +18,24 @@
 
 </head>
 <body>
+{% include '_header.html' %}
 
-<div class="block"><h1>Hello, Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1></div>
+{% set setting = {
+		img: 'img/dima.jpg',
+		bg_color: 'cyan',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam facilis excepturi alias ab reprehenderit! Esse natus corrupti harum ab itaque fugiat tenetur eos quo repellat, error pariatur iure est quae.'
+	} 
+%}
 
-<img src="img/eldar.jpg" alt="Boxer">
 
-<ul>
-	<li>
-		<ul>
-			<li>Hello</li>
-			<li>hello</li>
-			<li>
-				<ul>
-					<li class="for-rem">HEY</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>world</li>
-	<li>world</li>
-	<li>world</li>
-</ul>
+{% include '_main.html' %}
 
-<h2 class="big">Big text. Very BIG!!!</h2>
+<section>
+	<h2>Уникальный контент главной страницы</h2>
+</section>
 
-<picture>
-	<source srcset="img/1page-3page-form.webp" type="image/webp" media="(max-width:390px)">
-	<source srcset="img/svg/telegram.svg" media="(max-width:500px)">
-	<source srcset="img/eldar.jpg" type="image/jpeg" media="(max-width:600px)">
-	<source srcset="img/2page-form.webp" type="image/webp">
-	<img src="img/dima.jpg" alt="Picture">
-</picture>
+
+{% include '_footer.html' %}
 
 <script src="./js/js.js"></script>
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='X-UA-Compatible' content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="favicon.png">
+	<title> Другая </title>
+	<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+{% include '_header.html' %}
+{% set setting = {
+		img: 'img/svg/telegram.svg',
+		bg_color: 'blue',
+		text: 'THIRD PAGE!!! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam facilis excepturi alias ab reprehenderit! Esse natus corrupti harum ab itaque fugiat tenetur eos quo repellat, error pariatur iure est quae.'
+	} 
+%}
+
+
+{% include '_main.html' %}
+
+<section>
+	<h2>Уникальный контент третьей страницы</h2>
+</section>
+
+
+{% include '_footer.html' %}
+
+
+</body>
+</html>
